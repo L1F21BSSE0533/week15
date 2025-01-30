@@ -1,0 +1,12 @@
+on:
+  push:
+jobs:
+  build-development-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        run: actions/checkout@v4
+      - name: Build website for development
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+      - 
